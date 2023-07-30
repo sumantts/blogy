@@ -29,15 +29,14 @@
 		include('dashboard/dashboard.php');		
 		break;
 
-		//SETUP		
-		case 'maid_request':
-			$title = "Maid Request";
-			include('setup/maid_request/maid_request.php');		
-		break;
-		
-		case 'services':
-			$title = "Services";
-			include('setup/services/services.php');		
+		//SETUP			
+		case 'banner':
+			$title = "Banner Management";
+			include('setup/banner/banner.php');		
+		break;	
+		case 'authors':
+			$title = "Authors Profile";
+			include('setup/authors/authors.php');		
 		break;
 						
 		default:

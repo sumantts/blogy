@@ -27,11 +27,11 @@
 					<li class="nav-item pcoded-menu-caption" id="setup">
 						<label>SETUP</label>
 					</li>
-					<li class="nav-item <?php if($p == 'maid_request'){ ?> active <?php } ?>">
-					    <a href="?p=maid_request&gr=setup" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Maid Request List</span></a>
+					<li class="nav-item <?php if($p == 'banner'){ ?> active <?php } ?>">
+					    <a href="?p=banner&gr=setup" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Banner Management</span></a>
 					</li>
-					<li class="nav-item <?php if($p == 'services'){ ?> active <?php } ?>">
-					    <a href="?p=services&gr=setup" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Services</span></a>
+					<li class="nav-item <?php if($p == 'authors'){ ?> active <?php } ?>">
+					    <a href="?p=authors&gr=setup" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Authors Profile</span></a>
 					</li>
 
 					<!-- <li class="nav-item pcoded-hasmenu <?php if($p == 'deposit' || $p == 'loan'){ ?> active pcoded-trigger <?php } ?>">

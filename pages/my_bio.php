@@ -1,4 +1,7 @@
-<?php include('common/header.php');?>
+<?php 
+include('common/header.php');
+include 'studio/assets/php/myBioCtrl.php';
+?>
 	<!-- <body oncopy="return false;" oncut="return false;" onpaste="return false;" oncontextmenu="return false;"> -->
 	<body>
 	
@@ -10,10 +13,10 @@
 		<div class="container">
 			
 			<div class="row mb-5">
-				<div class="col-lg-5 mx-auto text-center" data-aos="fade-up">
-					<img src="images/person_1.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-3">
-					<h2 class="heading text-primary">James Griffin</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				<div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
+					<img src="<?=$author_photo?>" alt="Image" class="img-fluid w-10 rounded-circle mb-3">
+					<h2 class="heading text-primary"><?=$author_name?></h2>
+					<p><?=$author_bio?></p>
 				</div>
 			</div>
 

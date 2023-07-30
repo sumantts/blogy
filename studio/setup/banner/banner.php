@@ -77,7 +77,7 @@
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
                         <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="orgFormAlert1">
-							<strong>Success!</strong> Your Service saved successfully.
+							<strong>Success!</strong> Your Data saved successfully.
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
 
@@ -87,7 +87,7 @@
                                 <thead>
                                     <tr>
                                         <th>Sl.No.</th>
-                                        <th>Name</th>
+                                        <th>Title</th>
                                         <th>Description</th>
                                         <th>Photo</th>
                                         <th>Action</th>
@@ -96,7 +96,7 @@
                                 <tfoot>
                                     <tr>
                                         <th>Sl.No.</th>
-                                        <th>Name</th>
+                                        <th>Title</th>
                                         <th>Description</th>
                                         <th>Photo</th>
                                         <th>Action</th>
@@ -121,8 +121,8 @@
                             <form class="needs-validation" novalidate>
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
-                                        <label for="serviceName">Service Name*</label>
-                                        <input type="text" class="form-control" id="serviceName" placeholder="Service Name" value="" required >
+                                        <label for="serviceName">Title*</label>
+                                        <input type="text" class="form-control" id="serviceName" value="" required >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -132,7 +132,7 @@
                                     </div> 
                                     
                                     <div class="col-md-12 mb-3">
-                                        <label for="serviceDescription">Service Description*</label>
+                                        <label for="serviceDescription">Description*</label>
                                         <!-- <input type="text" class="form-control" id="serviceDescription" placeholder="Group Description" value="" required> -->
                                         <textarea class="form-control" id="serviceDescription" value="" required></textarea>
                                         <div class="valid-feedback">
@@ -176,4 +176,4 @@
 <!-- [ Main Content ] end -->
 	<?php include('common/footer.php'); ?>
     
-    <script src="setup/services/function.js"></script>
+    <script src="setup/banner/function.js"></script>

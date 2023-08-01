@@ -88,7 +88,6 @@
                                     <tr>
                                         <th>Sl.No.</th>
                                         <th>Name</th>
-                                        <th>Biography</th>
                                         <th>Photo</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -98,7 +97,6 @@
                                     <tr>
                                         <th>Sl.No.</th>
                                         <th>Name</th>
-                                        <th>Biography</th>
                                         <th>Photo</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -147,7 +145,7 @@
                                     
                                     <div class="col-md-6 mb-2 mt-4">
                                         <input type="file" accept="image/*" class="custom-file-input" id="author_photo" aria-describedby="author_photo"  onchange="savePhoto()">
-                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                        <label class="custom-file-label" for="validatedCustomFile">Choose image...</label>
                                         <small id="author_photoError" class="form-text text-danger"> </small>
                                         <img src="" id="image" width="100">
                                     </div> 

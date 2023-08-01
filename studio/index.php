@@ -38,6 +38,10 @@
 			$title = "Authors Profile";
 			include('setup/authors/authors.php');		
 		break;
+		case 'post':
+			$title = "Create a Post";
+			include('setup/post/post.php');		
+		break;
 						
 		default:
 		include('signin/signin.php');

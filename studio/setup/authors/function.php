@@ -76,10 +76,9 @@
 
 				$data[0] = $slno;
 				$data[1] = $author_name;
-				$data[2] = $author_bio1;
-				$data[3] = "<img src='".$author_photo."' id='saved_image' width='100' style='border-radius: 50px'>"; 
-				$data[4] = $author_status;
-				$data[5] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' onclick='editTableData(".$author_id.")'></i></a><a href='javascript: void(0)' data-center_id='1'> <i class='fa fa-trash' aria-hidden='true' onclick='deleteTableData(".$author_id.")'></i></a>";
+				$data[2] = "<img src='".$author_photo."' id='saved_image' width='100' style='border-radius: 50px'>"; 
+				$data[3] = $author_status;
+				$data[4] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' onclick='editTableData(".$author_id.")'></i></a><a href='javascript: void(0)' data-center_id='1'> <i class='fa fa-trash' aria-hidden='true' onclick='deleteTableData(".$author_id.")'></i></a>";
 
 				array_push($mainData, $data);
 				$slno++;

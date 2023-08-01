@@ -160,7 +160,7 @@ function populateDataTable(){
     $('#example').dataTable().fnDestroy();
 
     $('#example').DataTable({ 
-        columnDefs: [{ width: 40, targets: 0 }, { width: 400, targets: 2 }, { width: 50, targets: 4 }],
+        columnDefs: [{ width: 40, targets: 0 }, { width: 400, targets: 1 }, { width: 50, targets: 3 }],
         responsive: true,
         serverMethod: 'GET',
         ajax: {'url': 'setup/authors/function.php?fn=getTableData' },

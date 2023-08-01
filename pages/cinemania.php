@@ -1,4 +1,6 @@
-
+	<?php
+		include 'studio/assets/php/cinemaniaCtrl.php';
+	?>
 
 	<!-- Start posts-entry -->
 	<section class="section posts-entry">
@@ -7,23 +9,33 @@
 				<div class="col-sm-6">
 					<h2 class="posts-entry-title">Cinemania</h2>
 				</div>
-				<div class="col-sm-6 text-sm-end"><a href="?p=cinemania" class="read-more">View All</a></div>
+				<?php if(sizeof($posts) > 5){?>
+					<div class="col-sm-6 text-sm-end"><a href="?p=cinemania" class="read-more">View All</a></div>
+				<?php } ?>
+
 			</div>
 			<div class="row g-3">
 				<div class="col-md-9">
 					<div class="row g-3">
+						<?php for($i = 0; $i < 2; $i++){ ?>
 						<div class="col-md-6">
 							<div class="blog-entry">
-								<a href="?p=read-more" class="img-link">
-									<img src="images/cinema/cinema_1.png" alt="Image" class="img-fluid">
-								</a>
-								<span class="date">Apr. 14th, 2022</span>
-								<h2><a href="?p=read-more">Thought you loved Python? Wait until you meet Rust</a></h2>
-								<p> Cinemania Live with Srijit Mukherji, Tota Roy Chowdhury, Anirban Chakrabarti & Kalpan Mitra</p>
-								<p><a href="?p=read-more" class="btn btn-sm btn-outline-primary">Read More</a></p>
+								<?php if($posts[$i]->post_image != ''){?>
+									<a href="?p=read-more&pi=<?=$posts[$i]->post_id?>" class="img-link">
+										<img src="<?=$posts[$i]->post_image?>" alt="Image" class="img-fluid">
+									</a>
+								<?php } ?>
+								<?php if($posts[$i]->post_video != ''){?>
+									<iframe width="370" height="215" src="<?=$posts[$i]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+								<?php } ?>
+								<span class="date"><?=date('jS. F, Y', strtotime($posts[$i]->created_on))?></span>
+								<h2><a href="?p=read-more&pi=<?=$posts[$i]->post_id?>"><?=$posts[$i]->post_title?></a></h2>
+								<p> <?=$posts[$i]->post_description?></p>
+								<p><a href="?p=read-more&pi=<?=$posts[$i]->post_id?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<?php } ?>
+						<!-- <div class="col-md-6">
 							<div class="blog-entry">
 								<a href="?p=read-more" class="img-link">
 									<img src="images/img_2_sq.jpg" alt="Image" class="img-fluid">
@@ -33,19 +45,37 @@
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
 								<p><a href="?p=read-more" class="btn btn-sm btn-outline-primary">Read More</a></p>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
+				<?php if(sizeof($posts) > 2){?>
 				<div class="col-md-3">
 					<ul class="list-unstyled blog-entry-sm">
-						<li>
-							<span class="date">Apr. 14th, 2022</span>
-							<h3><a href="?p=read-more">Don’t assume your user data in the cloud is safe</a></h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
-							<p><a href="?p=read-more" class="read-more">Continue Reading</a></p>
-						</li>
+						<?php 
+						for($j = 2; $j < 5; $j++){ 
+							if(strpos($posts[$j]->post_title, "A") == true){
+								$title1 = substr($posts[$j]->post_title, 0, 40) . '...'; //English 100 //Bengali 300
+							}else{
+								$title2 = substr($posts[$j]->post_title, 0, 40); //English 100 //Bengali 300
+								$title1 = substr($title2, 0, -2) . '...';
+							}
 
-						<li>
+							if(strpos($posts[$j]->post_description, "A") == true){
+								$post_description1 = substr($posts[$j]->post_description, 0, 60) . '...'; //English 100 //Bengali 300
+							}else{
+								$post_description2 = substr($posts[$j]->post_description, 0, 80); //English 100 //Bengali 300
+								$post_description1 = substr($post_description2, 0, -2) . '...';
+							}
+						?>
+							<li>
+								<span class="date"><?=date('jS. F, Y', strtotime($posts[$j]->created_on))?></span>
+								<h3><a href="?p=read-more&pi=<?=$posts[$j]->post_id?>"><?=$title1?></a></h3>
+								<p><?=$post_description1?></p>
+								<p><a href="?p=read-more&pi=<?=$posts[$j]->post_id?>" class="read-more">Continue Reading</a></p>
+							</li>
+						<?php } ?>
+
+						<!-- <li>
 							<span class="date">Apr. 14th, 2022</span>
 							<h3><a href="?p=read-more">Meta unveils fees on metaverse sales</a></h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
@@ -57,9 +87,10 @@
 							<h3><a href="?p=read-more">UK sees highest inflation in 30 years</a></h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
 							<p><a href="?p=read-more" class="read-more">Continue Reading</a></p>
-						</li>
+						</li> -->
 					</ul>
 				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</section>

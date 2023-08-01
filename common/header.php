@@ -3,6 +3,7 @@
 * Template Author: mydemo.co
 * Template URI: #/
 * License: https://creativecommons.org/licenses/by/3.0/
+* source: https://themewagon.github.io/blogy/index.html
 */ -->
 <!doctype html>
 <html lang="en">

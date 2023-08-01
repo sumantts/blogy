@@ -21,5 +21,5 @@ if ($result->num_rows > 0) {
         array_push($services, $service);
     }
 }
-$mysqli->close();
+//$mysqli->close();
 ?>

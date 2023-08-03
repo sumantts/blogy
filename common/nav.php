@@ -68,7 +68,7 @@
 										<li><a href="?p=righting-the-wrong">Righting the Wrong</a></li>
 									</ul>
 								</li>
-								<li <?php if($p == 'public-culture'){?>  class="active" <?php } ?>><a href="?p=public-culture">Public Culture</a></li>
+								<li <?php if($p == 'public_culture'){?>  class="active" <?php } ?>><a href="?p=public_culture">Public Culture</a></li>
 								<li <?php if($p == 'public-history'){?>  class="active" <?php } ?>><a href="?p=public-history">Public History</a></li>
 								<li class="has-children <?php if($p == 'podcasts-sahityacharcha'){?> active <?php } ?>">
 									<a href="javascript: void(0)">Tell Tale</a>

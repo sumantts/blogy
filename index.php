@@ -68,7 +68,7 @@
 		include('pages/category.php');
 		break;
 
-		case 'public-culture':
+		case 'public_culture':
         $title = "Public Culture";
 		include('pages/category.php');
 		break;

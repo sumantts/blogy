@@ -153,7 +153,7 @@
 							<li><a href="?p=letters-to-the-editor">Letters to the Editor <span>(22)</span></a></li>
 							<li><a href="?p=indept-reportage">Indept Reportage <span>(32)</span></a></li>
 							<li><a href="?p=righting-the-wrong">Righting the Wrong <span>(12)</span></a></li>
-							<li><a href="?p=public-culture">Public Culture <span>(22)</span></a></li>
+							<li><a href="?p=public_culture">Public Culture <span>(22)</span></a></li>
 							<li><a href="?p=public-history">Public History <span>(32)</span></a></li>
 							<li><a href="?p=podcasts-sahityacharcha">Podcasts Sahityacharcha <span>(22)</span></a></li>
 							<li><a href="?p=videos">Videos <span>(14)</span></a></li>

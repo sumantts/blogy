@@ -17,7 +17,15 @@
 			<div class="row g-3">
 				<div class="col-md-9">
 					<div class="row g-3">
-						<?php for($i = 0; $i < 2; $i++){ ?>
+						<?php 
+							for($i = 0; $i < 2; $i++){ 							
+								if(strpos($posts[$i]->post_title, "A") == true){
+									$title_1 = substr($posts[$i]->post_title, 0, 40) . '...'; //English 100 //Bengali 300
+								}else{
+									$title_2 = substr($posts[$i]->post_title, 0, 180); //English 100 //Bengali 300
+									$title_1 = substr($title_2, 0, -2) . '...';
+								}
+							?>
 						<div class="col-md-6">
 							<div class="blog-entry">
 								<?php if($posts[$i]->post_image != ''){?>
@@ -29,7 +37,7 @@
 									<iframe width="370" height="215" src="<?=$posts[$i]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 								<?php } ?>
 								<span class="date"><?=date('jS. F, Y', strtotime($posts[$i]->created_on))?></span>
-								<h2><a href="?p=read-more&pi=<?=$posts[$i]->post_id?>"><?=$posts[$i]->post_title?></a></h2>
+								<h2><a href="?p=read-more&pi=<?=$posts[$i]->post_id?>"><?=$title_1?></a></h2>
 								<p> <?=$posts[$i]->post_description?></p>
 								<p><a href="?p=read-more&pi=<?=$posts[$i]->post_id?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
 							</div>

@@ -73,7 +73,7 @@
 		include('pages/category.php');
 		break;
 
-		case 'public-history':
+		case 'public_history':
         $title = "Public History";
 		include('pages/category.php');
 		break;

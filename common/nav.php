@@ -69,7 +69,7 @@
 									</ul>
 								</li>
 								<li <?php if($p == 'public_culture'){?>  class="active" <?php } ?>><a href="?p=public_culture">Public Culture</a></li>
-								<li <?php if($p == 'public-history'){?>  class="active" <?php } ?>><a href="?p=public-history">Public History</a></li>
+								<li <?php if($p == 'public_history'){?>  class="active" <?php } ?>><a href="?p=public_history">Public History</a></li>
 								<li class="has-children <?php if($p == 'podcasts-sahityacharcha'){?> active <?php } ?>">
 									<a href="javascript: void(0)">Tell Tale</a>
 									<ul class="dropdown">

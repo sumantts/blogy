@@ -123,7 +123,7 @@
 				}
 				$data[6] = date('d-M-Y', strtotime($created_on));
 				$data[7] =  ucfirst($activity_status);
-				$data[8] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' onclick='editTableData(".$post_id.")'></i></a><a href='javascript: void(0)' data-center_id='1'> <i class='fa fa-trash' aria-hidden='true' onclick='deleteTableData(".$post_id.")'></i></a>";
+				$data[8] = "<a href='?p=add_edit_post&gr=setup&pi=".$post_id."' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' onclick='editTableData(".$post_id.")'></i></a><a href='javascript: void(0)' data-center_id='1'> <i class='fa fa-trash' aria-hidden='true' onclick='deleteTableData(".$post_id.")'></i></a>";
 
 				array_push($mainData, $data);
 				$slno++;

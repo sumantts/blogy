@@ -39,7 +39,11 @@
 						<?php } ?>
 						<span class="date"><?=date('jS. F, Y', strtotime($posts_adda[$i]->created_on))?></span>
 						<h2><a href="?p=read-more&pi=<?=$posts_adda[$i]->post_id?>"><?=$title_1?></a></h2>
-						<p> <?=$posts_adda[$i]->post_description?></p>
+
+						<!-- <p> </p> -->
+						<div class="text ellipsis">
+						<span class="text-concat"><?=$posts_adda[$i]->post_description?></span>
+						</div>
 						<p><a href="?p=read-more&pi=<?=$posts_adda[$i]->post_id?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
 					</div>
 				</div>

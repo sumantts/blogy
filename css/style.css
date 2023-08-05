@@ -10303,7 +10303,7 @@ textarea {
     position: relative;
     z-index: 2; }
   .site-cover.overlay:before {
-    background: rgba(0, 0, 0, 0.6);
+    /*background: rgba(0, 0, 0, 0.6);*/
     position: absolute;
     content: "";
     top: 0;
@@ -10503,3 +10503,31 @@ textarea {
       .site-footer .social li a:hover {
         background: #fff;
         color: #214252; }
+
+
+      /*Line Break css*/
+      .text {
+        position: relative;
+        font-size: 14px;
+        color: black;
+        width: 250px; /* Could be anything you like. */
+      }
+      
+      .text-concat {
+        position: relative;
+        display: inline-block;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-height: 6.6em; /* (Number of lines you want visible) * (line-height) */
+        line-height: 1.2em;
+        text-align:justify;
+      }
+      
+      .text.ellipsis::after {
+        content: "...";
+        position: absolute;
+        right: -12px; 
+        bottom: 4px;
+      }
+      
+      /* Right and bottom for the psudo class are px based on various factors, font-size etc... Tweak for your own needs. */

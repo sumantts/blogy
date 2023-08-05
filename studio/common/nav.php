@@ -33,7 +33,7 @@
 					<li class="nav-item <?php if($p == 'authors'){ ?> active <?php } ?>">
 					    <a href="?p=authors&gr=setup" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Authors Profile</span></a>
 					</li>
-					<li class="nav-item <?php if($p == 'post'){ ?> active <?php } ?>">
+					<li class="nav-item <?php if($p == 'post' || $p == 'add_edit_post'){ ?> active <?php } ?>">
 					    <a href="?p=post&gr=setup" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Create a Post</span></a>
 					</li>
 

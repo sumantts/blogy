@@ -1,13 +1,13 @@
-$('#onMyModal').on('click', function(){
-    clearForm();
-    $('#exampleModalLong').modal('show');
-})
+// $('#onMyModal').on('click', function(){
+//     clearForm();
+//     $('#exampleModalLong').modal('show');
+// })
 
 function validateForm(){
     $category_id = $('#category_id').val();
     $author_id = $('#author_id').val();
     $post_title = $('#post_title').val().replace(/^\s+|\s+$/gm,'');
-    $post_description = $('#post_description').val().replace(/^\s+|\s+$/gm,'');
+    $post_description = $('#post_description').val();
     $status = true;
 
     if($category_id == '0'){
@@ -37,14 +37,14 @@ function validateForm(){
         $('#post_title').addClass('is-valid');
     }     
 
-    if($post_description == ''){
-        $status = false;
-        $('#post_description').removeClass('is-valid');
-        $('#post_description').addClass('is-invalid');
-    }else{
-        $('#post_description').removeClass('is-invalid');
-        $('#post_description').addClass('is-valid');
-    }    
+    // if($post_description == ''){
+    //     $status = false;
+    //     $('#post_description').removeClass('is-valid');
+    //     $('#post_description').addClass('is-invalid');
+    // }else{
+    //     $('#post_description').removeClass('is-invalid');
+    //     $('#post_description').addClass('is-valid');
+    // }    
 
     $('#submitForm_spinner').hide();
     $('#submitForm_spinner_text').hide();
@@ -53,19 +53,19 @@ function validateForm(){
     return $status;
 }//en validate form
 
-function clearForm(){
-    $('#myForm').trigger("reset");
+// function clearForm(){
+//     $('#myForm').trigger("reset");
 
-    let img = document.getElementById('image');
-    img.src = '';
-}//end 
+//     let img = document.getElementById('image');
+//     img.src = '';
+// }//end 
 
-$(".form-control").blur(function(){
-    $('#orgFormAlert').css("display", "none");
-    $formVallidStatus = validateForm();
-});
+// $(".form-control").blur(function(){
+//     $('#orgFormAlert').css("display", "none");
+//     $formVallidStatus = validateForm();
+// });
 
-$('#submitForm').click(function(){
+/*$('#submitForm').click(function(){
     $('#submitForm_spinner').show();
     $('#submitForm_spinner_text').show();
     $('#submitForm_text').hide();
@@ -73,8 +73,10 @@ $('#submitForm').click(function(){
         $formVallidStatus = validateForm();
 
         if($formVallidStatus == true){
-            $post_image = localStorage.getItem('post_image');
-            $myFormData = $('#myForm').serializeArray();
+            $('#myForm').submit();
+            //$post_image = localStorage.getItem('post_image');
+            //$('#post_image_data').val($post_image);
+            //$myFormData = $('#myForm').serializeArray();
 
             $.ajax({
                 method: "POST",
@@ -99,7 +101,7 @@ $('#submitForm').click(function(){
         }
 
     }, 500)    
-})
+})*/
 
 function editTableData($post_id){
     $('#exampleModalLong').modal('show');
@@ -165,6 +167,7 @@ function savePhoto(){
     reader.addEventListener("load", function () {
         // convert image file to base64 string and save to localStorage
         localStorage.setItem("post_image", reader.result);
+        $('#post_image_data').val(reader.result);
     }, false);
 
     if (imgPath) {
@@ -275,6 +278,6 @@ function configureAuthorDropDown(){
 
 $(document).ready(function () {
     populateDataTable();
-    configureCategoryDropDown();
-    configureAuthorDropDown();
+    //configureCategoryDropDown();
+    //configureAuthorDropDown();
 });

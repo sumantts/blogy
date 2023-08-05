@@ -42,6 +42,10 @@
 			$title = "Create a Post";
 			include('setup/post/post.php');		
 		break;
+		case 'add_edit_post':
+			$title = "Create/Update a Post";
+			include('setup/post/add_edit_post.php');		
+		break;
 						
 		default:
 		include('signin/signin.php');

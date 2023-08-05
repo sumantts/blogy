@@ -18,13 +18,14 @@ if ($result->num_rows > 0) {
         $created_on = $row['created_on'];		
         $activity_status = $row['activity_status'];		
         $author_name = $row['author_name'];		
-
-        if(strpos($post_description, "A") == true || strpos($post_description, "a") == true){
+        $post_description1 = $post_description;
+        
+        /*if(strpos($post_description, "A") == true || strpos($post_description, "a") == true){
             $post_description1 = substr($post_description, 0, 300) . '...'; //English 100 //Bengali 300
         }else{
             $post_description2 = substr($post_description, 0, 200); //English 100 //Bengali 300
             $post_description1 = substr($post_description2, 0, -2) . '...';
-        }
+        }*/
 
         $post_pCul = new stdClass();			
         $post_pCul->post_id = $post_id;			

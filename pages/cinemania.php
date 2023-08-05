@@ -38,9 +38,12 @@
 								<?php } ?>
 								<span class="date"><?=date('jS. F, Y', strtotime($posts[$i]->created_on))?></span>
 								<h2><a href="?p=read-more&pi=<?=$posts[$i]->post_id?>"><?=$title_1?></a></h2>
-								<p> <?=$posts[$i]->post_description?></p>
-								<p><a href="?p=read-more&pi=<?=$posts[$i]->post_id?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
+								<!-- <p> </p> -->
+								<div class="text ellipsis">
+								<span class="text-concat"><?=$posts[$i]->post_description?></span>
+								</div>
 							</div>
+							<p><a href="?p=read-more&pi=<?=$posts[$i]->post_id?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
 						</div>
 						<?php } ?>
 						<!-- <div class="col-md-6">
@@ -78,7 +81,10 @@
 							<li>
 								<span class="date"><?=date('jS. F, Y', strtotime($posts[$j]->created_on))?></span>
 								<h3><a href="?p=read-more&pi=<?=$posts[$j]->post_id?>"><?=$title1?></a></h3>
-								<p><?=$post_description1?></p>
+								
+								<div class="text ellipsis">
+									<span class="text-concat"><?=$posts[$j]->post_description?></span>
+								</div>
 								<p><a href="?p=read-more&pi=<?=$posts[$j]->post_id?>" class="read-more">Continue Reading</a></p>
 							</li>
 						<?php } ?>

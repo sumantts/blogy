@@ -44,8 +44,8 @@
 						<div class="text ellipsis">
 						<span class="text-concat"><?=$posts_adda[$i]->post_description?></span>
 						</div>
-						<p><a href="?p=read-more&pi=<?=$posts_adda[$i]->post_id?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
 					</div>
+						<p><a href="?p=read-more&pi=<?=$posts_adda[$i]->post_id?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
 				</div>
 			    <?php } ?>
 

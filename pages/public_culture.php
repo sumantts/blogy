@@ -44,9 +44,13 @@
 							<?php } ?>
 							<span class="date"><?=date('jS. F, Y', strtotime($posts_pCul[$i]->created_on))?></span>
 							<h2><a href="?p=read-more&pi=<?=$posts_pCul[$i]->post_id?>"><?=$title_1?></a></h2>
-							<p> <?=$posts_pCul[$i]->post_description?></p>
-							<p><a href="?p=read-more&pi=<?=$posts_pCul[$i]->post_id?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
+							<!-- <p> </p> -->
+							<div class="text ellipsis">
+							<span class="text-concat"><?=$posts_pCul[$i]->post_description?></span>
 							</div>
+							
+							</div>
+							<p><a href="?p=read-more&pi=<?=$posts_pCul[$i]->post_id?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
 						</div>
 			   			<?php } ?>
 
@@ -84,7 +88,10 @@
 							
 						<span class="date"><?=date('jS. F, Y', strtotime($posts_pCul[$i]->created_on))?></span>
 						<h3><a href="?p=read-more&pi=<?=$posts_pCul[$i]->post_id?>"><?=$title_1?></a></h3>
-						<p> <?=$posts_pCul[$i]->post_description?></p>
+						<!-- <p> <?=$posts_pCul[$i]->post_description?></p> -->
+						<div class="text ellipsis">
+						<span class="text-concat"><?=$posts_pCul[$i]->post_description?></span>
+						</div>
 						<p><a href="?p=read-more&pi=<?=$posts_pCul[$i]->post_id?>" class="read-more">Continue Reading</a></p>
 						</li>
 			   			<?php } ?>

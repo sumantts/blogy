@@ -10519,10 +10519,21 @@ textarea {
         word-wrap: break-word;
         overflow: hidden;
         max-height: 6.6em; /* (Number of lines you want visible) * (line-height) */
-        /*line-height: 1.2em;*/
+        line-height: 2.2em;
         text-align:justify;
         width: 100%; 
       }
+      
+      /* .text-concat1 {
+        position: relative;
+        display: inline-block;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-height: 6.6em; /* (Number of lines you want visible) * (line-height) */
+        line-height: 2.2em;
+        text-align:justify;
+        width: 100%; 
+      } */
       
       .text.ellipsis::after {
         content: "...";

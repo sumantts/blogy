@@ -228,22 +228,32 @@
                 </div>
             </div>
             <!-- END sidebar-box -->  
+            <?php
+            if(sizeof($popu_posts) > 0){
+            ?>
             <div class="sidebar-box">
                 <h3 class="heading">Popular Posts</h3>
                 <div class="post-entry-sidebar">
+                    
                 <ul>
+                    <?php
+                    for($p  = 0; $p < sizeof($popu_posts); $p++){
+                    ?>
                     <li>
-                    <a href="">
-                        <img src="images/img_1_sq.jpg" alt="Image placeholder" class="me-4 rounded">
+                    <a href="?p=read-more&pi=<?=$popu_posts[$p]->post_id?>">
+                        <?php if($popu_posts[$p]->post_image != ''){?>
+                        <img src="<?=$popu_posts[$p]->post_image?>" alt="Image placeholder" class="me-4 rounded">
+                        <?php } ?>
                         <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                        <h4><?=$popu_posts[$p]->post_title?></h4>
                         <div class="post-meta">
-                            <span class="mr-2">March 15, 2018 </span>
+                            <span class="mr-2"><?=date('jS. F, Y', strtotime($popu_posts[$p]->created_on))?></span>
                         </div>
                         </div>
                     </a>
                     </li>
-                    <li>
+                    <?php } ?>
+                    <!-- <li>
                     <a href="">
                         <img src="images/img_2_sq.jpg" alt="Image placeholder" class="me-4 rounded">
                         <div class="text">
@@ -264,41 +274,57 @@
                         </div>
                         </div>
                     </a>
-                    </li>
+                    </li> -->
                 </ul>
                 </div>
-            </div>
+            </div> 
+            <?php } ?>
             <!-- END sidebar-box -->
 
             <div class="sidebar-box">
                 <h3 class="heading">Categories</h3>
                 <ul class="categories">
-                <li><a href="#">Food <span>(12)</span></a></li>
-                <li><a href="#">Travel <span>(22)</span></a></li>
+                <?php
+                    if(sizeof($categories) > 0){
+                        for($k = 0; $k < sizeof($categories); $k++){
+                            if($categories[$k]->category_post_count > 0){
+                ?>
+                <li><a href="?p=<?=$categories[$k]->category_slug?>"><?=$categories[$k]->category_name?> <span>(<?=$categories[$k]->category_post_count?>)</span></a></li>
+                <?php } } }?>
+                <!-- <li><a href="#">Travel <span>(22)</span></a></li>
                 <li><a href="#">Lifestyle <span>(37)</span></a></li>
                 <li><a href="#">Business <span>(42)</span></a></li>
-                <li><a href="#">Adventure <span>(14)</span></a></li>
+                <li><a href="#">Adventure <span>(14)</span></a></li> -->
                 </ul>
             </div>
             <!-- END sidebar-box -->
 
-            <div class="sidebar-box">
-                <h3 class="heading">Tags</h3>
-                <ul class="tags">
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Freelancing</a></li>
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Freelancing</a></li>
-                </ul>
-            </div>
+            <?php 
+            //echo json_encode($filtered_tags); 
+            if(sizeof($filtered_tags) > 0){
+            ?>
+                <div class="sidebar-box">
+                    <h3 class="heading">Tags</h3>
+                    <ul class="tags">
+                    <?php 
+                    for($t = 0; $t < sizeof($filtered_tags); $t++){
+                    ?>
+                        <li><a href="?p=<?=$filtered_tags[$t]->category_slug?>"><?=$filtered_tags[$t]->post_tag_n?></a></li>
+                    <?php } ?>
+                    <!-- <li><a href="#">Adventure</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Freelancing</a></li>
+                    <li><a href="#">Travel</a></li>
+                    <li><a href="#">Adventure</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Freelancing</a></li> -->
+                    </ul>
+                </div>
+                <?php } ?>
             </div>
             <!-- END sidebar -->
 

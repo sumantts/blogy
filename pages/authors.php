@@ -30,14 +30,19 @@ include 'studio/assets/php/authorsCtrl.php';
 				<div class="col-lg-4 mb-4 text-center" data-aos="fade-up" data-aos-delay="0">
 					<img src="<?=$authors[$i]->author_photo?>" alt="<?=$authors[$i]->author_name?>" class="img-fluid w-50 rounded-circle mb-3">
 					<h5 class="text-black"><?=$authors[$i]->author_name?></h5>
-					<p><?php
-					if(strpos($authors[$i]->author_bio, "A") == true){
-						echo substr($authors[$i]->author_bio, 0, 100) . '...'; //English 100 //Bengali 300
-					}else{
-						echo substr($authors[$i]->author_bio, 0, 300) . '...'; //English 100 //Bengali 300
-					}
-					?></p>
-					<p><a href="?p=my-bio&id=<?=$authors[$i]->author_id?>" class="btn btn-primary btn-sm rounded px-2 py-2">Read my bio</a></p>
+					<!-- <p><?php
+					// if(strpos($authors[$i]->author_bio, "A") == true){
+					// 	echo substr($authors[$i]->author_bio, 0, 100) . '...'; //English 100 //Bengali 300
+					// }else{
+					// 	echo substr($authors[$i]->author_bio, 0, 300) . '...'; //English 100 //Bengali 300
+					// }
+					?></p> -->
+					<div class="text ellipsis">
+						<span class="text-concat"><?=$authors[$i]->author_bio?></span>
+					</div>
+					<p>
+						<a href="?p=my-bio&id=<?=$authors[$i]->author_id?>" class="btn btn-primary btn-sm rounded px-2 py-2">Read my bio</a>
+					</p>
 				</div>
 				<?php }
 				} ?>

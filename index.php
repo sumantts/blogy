@@ -53,7 +53,7 @@
 		include('pages/category.php');
 		break;
 
-		case 'letters-to-the-editor':
+		case 'letters_to_the_editor':
         $title = "Letters to the Editor";
 		include('pages/category.php');
 		break;
@@ -78,7 +78,7 @@
 		include('pages/category.php');
 		break;
 
-		case 'podcasts-sahityacharcha':
+		case 'podcasts_sahityacharcha':
         $title = "Podcasts Sahityacharcha";
 		include('pages/category.php');
 		break;

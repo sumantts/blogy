@@ -57,23 +57,23 @@
 									</ul>
 								</li> -->
 								<li <?php if($p == 'cinemania'){?>  class="active" <?php } ?>><a href="?p=cinemania">Cinemania</a></li>
-								<li class="has-children <?php if($p == 'adda' || $p == 'satire' || $p == 'op_ed' || $p == 'letters-to-the-editor' || $p == 'indept-reportage' || $p == 'righting-the-wrong'){?> active <?php } ?>">
+								<li class="has-children <?php if($p == 'adda' || $p == 'satire' || $p == 'op_ed' || $p == 'letters_to_the_editor' || $p == 'indept-reportage' || $p == 'righting-the-wrong'){?> active <?php } ?>">
 									<a href="javascript: void(0)">Polity Adda</a>
 									<ul class="dropdown">
 										<li><a href="?p=adda">Adda</a></li>
 										<li><a href="?p=satire">Satire</a></li>
 										<li><a href="?p=op_ed">Op-Ed</a></li>
-										<li><a href="?p=letters-to-the-editor">Letters to the Editor</a></li>
+										<li><a href="?p=letters_to_the_editor">Letters to the Editor</a></li>
 										<li><a href="?p=indept-reportage">Indept Reportage</a></li>
 										<li><a href="?p=righting-the-wrong">Righting the Wrong</a></li>
 									</ul>
 								</li>
 								<li <?php if($p == 'public_culture'){?>  class="active" <?php } ?>><a href="?p=public_culture">Public Culture</a></li>
 								<li <?php if($p == 'public_history'){?>  class="active" <?php } ?>><a href="?p=public_history">Public History</a></li>
-								<li class="has-children <?php if($p == 'podcasts-sahityacharcha'){?> active <?php } ?>">
+								<li class="has-children <?php if($p == 'podcasts_sahityacharcha'){?> active <?php } ?>">
 									<a href="javascript: void(0)">Tell Tale</a>
 									<ul class="dropdown">
-										<li><a href="?p=podcasts-sahityacharcha">Podcasts Sahityacharcha</a></li>
+										<li><a href="?p=podcasts_sahityacharcha">Podcasts Sahityacharcha</a></li>
 									</ul>
 								</li>
 								<li <?php if($p == 'authors' || $p == 'my-bio'){?>  class="active" <?php } ?>><a href="?p=authors">Authors</a></li>

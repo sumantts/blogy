@@ -127,5 +127,70 @@ if(sizeof($all_tags) > 0){
     }//end for
 }//end if
 
+//Customer comments
+$comments = array();
+
+$sql_comment = "SELECT post_manager.post_id, post_manager.post_title, cstomer_review.cr_id, cstomer_review.parent_cr_id, cstomer_review.review_detail, cstomer_review.created_at, cstomer_review.published FROM cstomer_review JOIN post_manager ON cstomer_review.post_id = post_manager.post_id WHERE cstomer_review.parent_cr_id = '0' AND cstomer_review.published = 'yes' AND cstomer_review.post_id = '" .$pi. "'";
+$result_comment = $mysqli->query($sql_comment);
+
+if ($result_comment->num_rows > 0) {
+    while($row_comment = $result_comment->fetch_array()){
+        $post_id = $row_comment['post_id'];		
+        $post_title = $row_comment['post_title'];	
+        $cr_id = $row_comment['cr_id'];		
+        $parent_cr_id = $row_comment['parent_cr_id'];		
+        $review_detail = json_decode($row_comment['review_detail']);	
+        $name = $review_detail->name;	
+        $email = $review_detail->email;	
+        $message = $review_detail->message;
+        $created_at = $row_comment['created_at'];
+        
+        $comment = new stdClass();
+        $comment->post_id = $post_id;
+        $comment->cr_id = $cr_id;
+        $comment->parent_cr_id = $parent_cr_id;
+        $comment->name = $name;
+        $comment->email = $email;
+        $comment->message = $message;
+        $comment->created_at = $created_at;
+
+        array_push($comments, $comment);
+    }
+}
+
+//check child comments
+function checkChildComments($post_id, $cr_id, $mysqli){
+    $comments = array();
+
+    $sql_comment = "SELECT post_manager.post_id, post_manager.post_title, cstomer_review.cr_id, cstomer_review.parent_cr_id, cstomer_review.review_detail, cstomer_review.created_at, cstomer_review.published FROM cstomer_review JOIN post_manager ON cstomer_review.post_id = post_manager.post_id WHERE cstomer_review.parent_cr_id = '".$cr_id."' AND cstomer_review.published = 'yes' AND cstomer_review.post_id = '" .$post_id. "'";
+    $result_comment = $mysqli->query($sql_comment);
+    
+    if ($result_comment->num_rows > 0) {
+        while($row_comment = $result_comment->fetch_array()){
+            $post_id = $row_comment['post_id'];		
+            $post_title = $row_comment['post_title'];	
+            $cr_id = $row_comment['cr_id'];		
+            $parent_cr_id = $row_comment['parent_cr_id'];		
+            $review_detail = json_decode($row_comment['review_detail']);	
+            $name = $review_detail->name;	
+            $email = $review_detail->email;	
+            $message = $review_detail->message;
+            $created_at = $row_comment['created_at'];
+            
+            $comment = new stdClass();
+            $comment->post_id = $post_id;
+            $comment->cr_id = $cr_id;
+            $comment->parent_cr_id = $parent_cr_id;
+            $comment->name = $name;
+            $comment->email = $email;
+            $comment->message = $message;
+            $comment->created_at = $created_at;
+    
+            array_push($comments, $comment);
+        }
+    }
+
+    return json_encode($comments);
+}//end fun
 
 ?>

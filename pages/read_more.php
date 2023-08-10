@@ -86,10 +86,51 @@
             data-layout="button_count">
             </div>
 
-
+            <?php if(sizeof($comments) > 0){?>
             <div class="pt-5 comment-wrap">
                 <h3 class="mb-5 heading">6 Comments</h3>
                 <ul class="comment-list">
+                <?php for($x = 0; $x < sizeof($comments); $x++){
+                    if($comments[$x]->parent_cr_id == 0){?>    
+                <li class="comment">
+                    <div class="vcard">
+                    <img src="images/no_images.png" alt="Image placeholder">
+                    </div>
+                    <div class="comment-body">
+                    <h3><?=$comments[$x]->name?></h3>
+                    <div class="meta"><?=date('jS. F, Y', strtotime($comments[$x]->created_at))?> at <?=date('h:i a', strtotime($comments[$x]->created_at))?></div>
+                    <p><?=$comments[$x]->message?></p>
+                    <p><a href="javascript: void(0)" onClick="$('#parent_cr_id').val(<?=$comments[$x]->cr_id?>)" class="reply rounded">Reply</a></p>
+
+                    <?php
+                        $child_available1 = checkChildComments($comments[$x]->post_id, $comments[$x]->cr_id, $mysqli);
+                        $child_available = json_decode($child_available1);
+                        if(sizeof($child_available) > 0){  
+
+                    ?>
+                        <ul class="children">
+                        <?php for($y = 0; $y < sizeof($child_available); $y++){?>
+                        <li class="comment">
+                            <div class="vcard">
+                            <img src="images/no_images.png" alt="Image placeholder">
+                            </div>
+                            <div class="comment-body">
+                            <h3><?=$child_available[$y]->name?></h3>
+                            <div class="meta"><?=date('jS. F, Y', strtotime($child_available[$x]->created_at))?> at <?=date('h:i a', strtotime($child_available[$x]->created_at))?></div>
+                            <p><?=$child_available[$y]->message?></p>
+                            <!-- <p><a href="javascript: void(0)" onClick="$('#parent_cr_id').val(<?=$child_available[$y]->cr_id?>)" class="reply rounded">Reply</a></p> -->
+                            </div>
+                        </li>
+                        <?php } ?>
+                        </ul>
+                    <?php } ?>
+                    </div>
+                </li>
+                <?php }
+                } ?>
+                </ul>
+                <?php } ?>
+                <!-- <ul class="comment-list">
                 <li class="comment">
                     <div class="vcard">
                     <img src="images/person_1.jpg" alt="Image placeholder">
@@ -168,7 +209,7 @@
                     <p><a href="#" class="reply rounded">Reply</a></p>
                     </div>
                 </li>
-                </ul>
+                </ul> -->
                 <!-- END comment-list -->
 
                 <div class="comment-form-wrap pt-5">
@@ -197,7 +238,9 @@
                         <div class="error-message" id="quote_error_msg1" style="display: none;  font-weight: bold;">Please enter the required fields</div>
                         <div class="sent-message" style="display: none">Your comment has been posted. After reviewed by Admin, it will display on our site. Thank you!</div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group">                        
+                    <input type="hidden" class="form-control" id="post_id" value="<?=$_GET['pi']?>">                     
+                    <input type="hidden" class="form-control" id="parent_cr_id" value="0">
                     <input type="button" value="Post Comment" class="btn btn-primary" id="sendReview">
                     </div>
 

@@ -10,6 +10,8 @@ $('#sendReview').click(function(){
     $name = $('#name').val();
     $email = $('#email').val();
     $message = $('#message').val();
+    $post_id = $('#post_id').val();
+    $parent_cr_id = $('#parent_cr_id').val();
     
     if($name == ''){
         $('#name').focus();
@@ -40,7 +42,7 @@ $('#sendReview').click(function(){
         $.ajax({
             method: "POST",
             url: "studio/assets/php/function.php",
-            data: { fn: "saveReview", review_details: $review_details }
+            data: { fn: "saveReview", review_details: $review_details, post_id: $post_id, parent_cr_id: $parent_cr_id }
         })
         .done(function( res ) {
             console.log(res);
@@ -53,6 +55,7 @@ $('#sendReview').click(function(){
                 $('#email').val('');
                 $('#message').val('');
                 $('.sent-message').show();
+                $('#parent_cr_id').val('0');
             }else{
                 console.log('after save do Failed steps');
             }

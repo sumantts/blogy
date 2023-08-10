@@ -27,11 +27,11 @@
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 								<li <?php if($p == 'home'){?>  class="active" <?php } ?>><a href="?p=home">Home</a></li>
 
-								<li class="has-children <?php if($p == 'articulture' || $p == 'art-work' || $p == 'photo_stories'){?> active <?php } ?>">
+								<li class="has-children <?php if($p == 'articulture' || $p == 'art_work' || $p == 'photo_stories'){?> active <?php } ?>">
 									<a href="javascript: void(0)">Artify</a>
 									<ul class="dropdown">
 										<li><a href="?p=articulture">Articulture</a></li>
-										<li><a href="?p=art-work">Art Work</a></li>
+										<li><a href="?p=art_work">Art Work</a></li>
 										<li><a href="?p=photo_stories">Photo Stories</a></li>
 									</ul>
 								</li>

@@ -10,7 +10,7 @@
 				</div>
 
 				<?php if(sizeof($posts_aWork) > 3){?>
-					<div class="col-sm-6 text-sm-end"><a href="?p=art-work" class="read-more">View All</a></div>
+					<div class="col-sm-6 text-sm-end"><a href="?p=art_work" class="read-more">View All</a></div>
 				<?php } ?>
 			</div>
 

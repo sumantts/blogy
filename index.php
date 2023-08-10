@@ -23,7 +23,7 @@
 		include('pages/category.php');
 		break;
 
-		case 'art-work':
+		case 'art_work':
         $title = "Art Work";
 		include('pages/category.php');
 		break;

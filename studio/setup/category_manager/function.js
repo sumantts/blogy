@@ -2,6 +2,12 @@ $('#onMyModal').on('click', function(){
     $('#exampleModalLong').modal('show');
 })
 
+$('#category_name').on('blur', function(){
+    $category_name = $('#category_name').val();
+    $category_slug = $category_name.replace(/ /g,"_");
+    $('#category_slug').val($category_slug).toLowerCase();
+})
+
 function validateForm(){
     $category_id = $('#category_id').val();
     $category_name = $('#category_name').val().replace(/^\s+|\s+$/gm,'');

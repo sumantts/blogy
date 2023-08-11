@@ -15,7 +15,7 @@
 
 		$category_id = $_POST["category_id"];		
 		$category_name = $_POST["category_name"];		
-		$category_slug = $_POST["category_slug"];		
+		$category_slug = strtolower($_POST["category_slug"]);		
 		$activity_status = $_POST["activity_status"];
 		
 		try {
@@ -111,7 +111,7 @@
 		$category_id = $_POST["category_id"];
 		$status = true;	
 
-		$sql = "DELETE FROM cstomer_review WHERE category_id = '".$category_id."'";
+		$sql = "DELETE FROM category_list WHERE category_id = '".$category_id."'";
 		$result = $mysqli->query($sql);
 		$return_result['status'] = $status;
 		sleep(1);

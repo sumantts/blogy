@@ -6,6 +6,10 @@
         vertical-align: top;
         white-space: normal !important;
     }
+
+    .myclass {
+        text-transform: lowercase;
+    }
 </style>
 
 <body class="">
@@ -117,7 +121,7 @@
 
                                     <div class="col-md-4 mb-3">
                                         <label for="category_slug">Category Slug</label>
-                                        <input type="text" class="form-control" name="category_slug" id="category_slug">
+                                        <input type="text" class="form-control myclass" name="category_slug" id="category_slug" readonly>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    

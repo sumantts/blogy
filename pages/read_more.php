@@ -45,7 +45,7 @@
 
         <div class="col-md-12 col-lg-8 main-content">
 
-          <div class="post-content-body">
+          <div class="post-content-body" style="text-align: justify;">
           <?=$post_description?>
           </div>
 

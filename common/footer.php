@@ -1,4 +1,6 @@
-
+<?php 
+    include 'studio/assets/php/footerCtrl.php';
+?>
 
 <footer class="site-footer">
 		<div class="container">
@@ -6,17 +8,30 @@
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3 class="mb-4">About</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<p><?=$about_us?></p>
 					</div> <!-- /.widget -->
 					<div class="widget">
 						<h3>Social</h3>
 						<ul class="list-unstyled social">
-							<li><a href="#"><span class="icon-instagram"></span></a></li>
-							<li><a href="#"><span class="icon-twitter"></span></a></li>
-							<li><a href="#"><span class="icon-facebook"></span></a></li>
-							<li><a href="#"><span class="icon-linkedin"></span></a></li>
-							<li><a href="#"><span class="icon-pinterest"></span></a></li>
-							<li><a href="#"><span class="icon-dribbble"></span></a></li>
+							
+						<?php if($socials["instagram"] != ''){?>
+							<li><a href="<?=$socials["instagram"]?>" target="_blank"><span class="icon-instagram"></span></a></li>
+						<?php }?>
+						<?php if($socials["twitter"] != ''){?>
+							<li><a href="<?=$socials["twitter"]?>" target="_blank"><span class="icon-twitter"></span></a></li>
+						<?php }?>
+						<?php if($socials["facebook"] != ''){?>
+							<li><a href="<?=$socials["facebook"]?>" target="_blank"><span class="icon-facebook"></span></a></li>
+						<?php }?>
+						<?php if($socials["linkedin"] != ''){?>
+							<li><a href="<?=$socials["linkedin"]?>" target="_blank"><span class="icon-linkedin"></span></a></li>
+						<?php }?>
+						<?php if($socials["pinterest"] != ''){?>
+							<li><a href="<?=$socials["pinterest"]?>" target="_blank"><span class="icon-pinterest"></span></a></li>
+						<?php }?>
+						<?php if($socials["dribbble"] != ''){?>
+							<li><a href="<?=$socials["dribbble"]?>" target="_blank"><span class="icon-dribbble"></span></a></li>
+						<?php }?>
 						</ul>
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
@@ -24,20 +39,16 @@
 					<div class="widget">
 						<h3 class="mb-4">Company</h3>
 						<ul class="list-unstyled float-start links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Vision</a></li>
-							<li><a href="#">Mission</a></li>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Privacy</a></li>
+							<li><a href="?p=art_work">Art Work</a></li>
+							<li><a href="?p=cinemania">Cinemania</a></li>
+							<li><a href="?p=photo_stories">Photo Stories</a></li>
+							<li><a href="?p=public_history">Public History</a></li>
 						</ul>
 						<ul class="list-unstyled float-start links">
-							<li><a href="#">Partners</a></li>
-							<li><a href="#">Cinemania</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Creative</a></li>
+							<li><a href="?p=adda">Adda</a></li>
+							<li><a href="?p=satire">Satire</a></li>
+							<li><a href="?p=op_ed">Op-Ed</a></li>
+							<li><a href="?p=public_culture">Public Culture</a></li>
 						</ul>
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
@@ -46,39 +57,22 @@
 						<h3 class="mb-4">Recent Post Entry</h3>
 						<div class="post-entry-footer">
 							<ul>
+								<?php if(sizeof($recent_posts) > 0){
+									for($f = 0; $f < sizeof($recent_posts); $f++){?>
 								<li>
-									<a href="">
-										<img src="images/img_1_sq.jpg" alt="Image placeholder" class="me-4 rounded">
+									<a href="?p=read-more&pi=<?=$recent_posts[$f]->post_id?>">
+										<?php if($recent_posts[$f]->post_image != ''){?>
+										<img src="<?=$recent_posts[$f]->post_image?>" alt="Image placeholder" class="me-4 rounded">
+										<?php } ?>
 										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+											<h4><?=substr($recent_posts[$f]->post_title, 0, 100) . '...'?></h4>
 											<div class="post-meta">
-												<span class="mr-2">March 15, 2018 </span>
+												<span class="mr-2"><?=date('jS. F, Y', strtotime($recent_posts[$f]->created_on))?></span>
 											</div>
 										</div>
 									</a>
 								</li>
-								<li>
-									<a href="">
-										<img src="images/img_2_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2018 </span>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="">
-										<img src="images/img_3_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2018 </span>
-											</div>
-										</div>
-									</a>
-								</li>
+								<?php } } ?>								
 							</ul>
 						</div>
 
@@ -87,7 +81,7 @@
 				</div> <!-- /.col-lg-4 -->
 			</div> <!-- /.row -->
 
-			<div class="row mt-5">
+			<div class="row">
 				<div class="col-12 text-center">
           <!-- 
               **==========
@@ -96,8 +90,7 @@
               **==========
             -->
 
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="#">mysite.co</a>  Distributed by <a href="#">Developer</a> <!-- License information: #/license/ -->
-            </p>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved.</p>
           </div>
         </div>
       </div> <!-- /.container -->

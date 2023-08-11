@@ -1,6 +1,7 @@
 <?php
 	include 'studio/assets/php/artWorkCtrl.php';
 ?>
+<?php if(sizeof($posts_aWork) > 0){?>
 <section class="section">
 		<div class="container">
 
@@ -68,3 +69,4 @@
 			
 		</div>
 	</section>
+	<?php } ?>

@@ -27,6 +27,9 @@
 					<li class="nav-item pcoded-menu-caption" id="setup">
 						<label>SETUP</label>
 					</li>
+					<li class="nav-item <?php if($p == 'category_manager'){ ?> active <?php } ?>">
+					    <a href="?p=category_manager&gr=setup" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Category Manager</span></a>
+					</li>
 					<li class="nav-item <?php if($p == 'banner'){ ?> active <?php } ?>">
 					    <a href="?p=banner&gr=setup" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Banner Management</span></a>
 					</li>

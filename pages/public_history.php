@@ -1,7 +1,7 @@
 <?php
 	include 'studio/assets/php/pHistoryCtrl.php';
 ?>
-
+<?php if(sizeof($posts_pHistory) > 0){?>
 	<div class="section bg-light">
 		<div class="container">
 
@@ -127,3 +127,4 @@
 
 		</div>
 	</div>
+	<?php } ?>

@@ -1,8 +1,8 @@
 	<?php
 		include 'studio/assets/php/publicCultureCtrl.php';
 	?>
-
 	<!-- Start posts-entry -->
+	<?php if(sizeof($posts_pCul) > 0){?>
 	<section class="section posts-entry">
 		<div class="container">
 			<div class="row mb-4">
@@ -116,3 +116,4 @@
 			</div>
 		</div>
 	</section>
+<?php } ?>

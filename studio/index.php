@@ -29,7 +29,12 @@
 		include('dashboard/dashboard.php');		
 		break;
 
-		//SETUP			
+		//SETUP		
+		case 'category_manager':
+			$title = "Category Manager";
+			include('setup/category_manager/category_manager.php');		
+		break;
+
 		case 'banner':
 			$title = "Banner Management";
 			include('setup/banner/banner.php');		

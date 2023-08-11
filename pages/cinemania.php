@@ -3,6 +3,7 @@
 	?>
 
 	<!-- Start posts-entry -->
+	<?php if(sizeof($posts) > 0){?>
 	<section class="section posts-entry">
 		<div class="container">
 			<div class="row mb-4">
@@ -108,4 +109,5 @@
 			</div>
 		</div>
 	</section>
+	<?php } ?>
 	<!-- End posts-entry -->

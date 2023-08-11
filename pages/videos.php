@@ -3,6 +3,7 @@
 ?>
 	
 	<!-- Start Videos -->
+	<?php if(sizeof($posts_videos) > 0){?>
 	<section class="section posts-entry posts-entry-sm bg-light">
 		<div class="container">
 			<div class="row mb-4">
@@ -48,4 +49,5 @@
 			</div>
 		</div>
 	</section>
+	<?php } ?>
 	<!-- End videos -->

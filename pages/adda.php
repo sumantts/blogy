@@ -2,6 +2,7 @@
 		include 'studio/assets/php/addaCtrl.php';
 	?>
 		<!-- Start posts_adda-entry -->
+	<?php if(sizeof($posts_adda) > 0){?>
 	<section class="section posts-entry posts-entry-sm bg-light">
 		<div class="container">
 			<div class="row mb-4">
@@ -85,4 +86,5 @@
 			</div>
 		</div>
 	</section>
+	<?php } ?>
 	<!-- End posts_adda-entry -->

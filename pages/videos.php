@@ -24,7 +24,7 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="blog-entry">
 						<a href="?p=read-more" class="img-link">
-							<iframe width="350" height="220" src="<?=$posts_videos[$i]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							<iframe width="350" height="220" src="https://www.youtube.com/embed/<?=$posts_videos[$i]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 						</a>
 						<span class="date"><?=$posts_videos[$i]->category_name?></span>
 					</div>

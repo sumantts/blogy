@@ -15,7 +15,8 @@
 			</div>
 
 			<div class="row align-items-stretch retro-layout-alt">
-				<?php if(sizeof($posts_pHistory) > 1){?>	
+				<?php if(sizeof($posts_pHistory) > 1){
+					?>	
 				<div class="col-md-5 order-md-2">
 					<a href="?p=read-more&pi=<?=$posts_pHistory[0]->post_id?>" class="hentry img-1 h-100 gradient">
 						<?php if($posts_pHistory[0]->post_image != ''){?>
@@ -23,7 +24,7 @@
 						<?php } ?>
 						<?php if($posts_pHistory[0]->post_video != ''){?>
 							<div class="featured-img" >
-								<iframe width="250" height="150" src="<?=$posts_adda[0]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+								<iframe width="250" height="150" src="https://www.youtube.com/embed/<?=$posts_adda[0]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							</div>
 						<?php } ?>
 						<div class="text">
@@ -46,13 +47,13 @@
 
 				<div class="col-md-7">
 					<?php if(sizeof($posts_pHistory) >= 2){?>
-					<a href="?p=read-more&pi=<?=$posts_pHistory[0]->post_id?>" class="hentry img-2 v-height mb30 gradient">
+					<a href="?p=read-more&pi=<?=$posts_pHistory[1]->post_id?>" class="hentry img-2 v-height mb30 gradient">
 						<?php if($posts_pHistory[1]->post_image != ''){?>
 							<div class="featured-img" style="background-image: url('<?=$posts_pHistory[1]->post_image?>');"></div>
 						<?php } ?>
 						<?php if($posts_pHistory[1]->post_video != ''){?>
 							<div class="featured-img" >
-								<iframe width="250" height="150" src="<?=$posts_pHistory[1]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+								<iframe width="620" height="300" src="https://www.youtube.com/embed/<?=$posts_pHistory[1]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							</div>
 						<?php } ?>
 						<div class="text text-sm">
@@ -79,7 +80,7 @@
 							//echo $posts_pHistory[3]->post_video;
 							?>
 							<div class="featured-img" >
-								<iframe width="250" height="150" src="<?=$posts_pHistory[2]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+								<iframe width="300" height="300" src="https://www.youtube.com/embed/<?=$posts_pHistory[2]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							</div>
 							
 						<?php } ?>
@@ -97,7 +98,7 @@
 						<?php } ?>
 						<?php if($posts_pHistory[3]->post_video != ''){?>
 							<div class="featured-img" >
-								<iframe width="250" height="150" src="<?=$posts_pHistory[3]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+								<iframe width="300" height="300" src="https://www.youtube.com/embed/<?=$posts_pHistory[3]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							</div>
 						<?php } ?>
 							<div class="text text-sm">

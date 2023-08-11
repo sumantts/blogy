@@ -310,8 +310,9 @@
 
                                 <div class="col-md-6 mb-2 mt-4">
                                     <!-- <label for="post_title">Youtube Video Link</label> -->
-                                    <input type="url" class="form-control" id="post_video" name="post_video" value="<?=$post_video?>" placeholder="Youtube Video Link" pattern="https://.*" >
+                                    <input type="text" class="form-control" id="post_video" name="post_video" value="<?=$post_video?>" placeholder="Youtube Embeded Link" >
                                     <a href="<?=$post_video?>" target="_blank" id="post_video_link" style="display: none">Watch on YouTube</a>
+                                    <span><s>https://www.youtube.com/watch?v=</s><strong>_aJI36GtHi4</strong></span>
                                 </div>  
                             </div> 
                             <input type="hidden" id="post_id" name="post_id" value="<?=$post_id?>">

@@ -117,7 +117,8 @@
 				$data[3] = $post_title;
 				$data[4] = "<img src='".$post_image."' id='saved_image' width='100' >";
 				if($post_video != ''){
-				$data[5] = "<a href='".$post_video."' target='_blank'>Watch on YouTube</a>"; //$post_video;
+					$l = 'https://www.youtube.com/watch?v='.$post_video;
+				$data[5] = "<a href='".$l."' target='_blank'>Watch on YouTube</a>"; //$post_video;
 				}else{
 					$data[5] = "";
 				}

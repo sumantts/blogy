@@ -40,7 +40,7 @@
 								</a>
 							<?php } ?>
 							<?php if($posts_pCul[$i]->post_video != ''){?>
-								<iframe width="250" height="150" src="<?=$posts_pCul[$i]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+								<iframe width="250" height="150" src="https://www.youtube.com/embed/<?=$posts_pCul[$i]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							<?php } ?>
 							<span class="date"><?=date('jS. F, Y', strtotime($posts_pCul[$i]->created_on))?></span>
 							<h2><a href="?p=read-more&pi=<?=$posts_pCul[$i]->post_id?>"><?=$title_1?></a></h2>

@@ -35,7 +35,7 @@
 									</a>
 								<?php } ?>
 								<?php if($posts[$i]->post_video != ''){?>
-									<iframe width="370" height="215" src="<?=$posts[$i]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+									<iframe width="370" height="215" src="https://www.youtube.com/embed/<?=$posts[$i]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 								<?php } ?>
 								<span class="date"><?=date('jS. F, Y', strtotime($posts[$i]->created_on))?></span>
 								<h2><a href="?p=read-more&pi=<?=$posts[$i]->post_id?>"><?=$title_1?></a></h2>

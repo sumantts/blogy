@@ -31,6 +31,10 @@
 								<img src="<?=$categories_data[$c]->post_image?>" alt="Image" class="img-fluid">
 							</a>
 						<?php } ?>
+						<?php if($categories_data[$c]->post_video != ''){?>
+							<iframe width="250" height="250" src="https://www.youtube.com/embed/<?=$categories_data[$c]->post_video?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+						<?php } ?>
+
 						<div>
 							<span class="date"><?=date('jS. F, Y', strtotime($categories_data[$c]->created_on))?> &bullet; <a href="#"><?=$title?></a></span>
 							<h2><a href="?p=read-more&pi=<?=$categories_data[$c]->post_id?>"><?=$categories_data[$c]->post_title?></a></h2>

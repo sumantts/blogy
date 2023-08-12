@@ -74,7 +74,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['data'] = $mainData;
     	echo json_encode($return_array);
@@ -104,7 +104,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['name'] = $name;
 		$return_array['description'] = $description;

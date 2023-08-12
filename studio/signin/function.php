@@ -31,7 +31,7 @@
 			} else {
 				$status = false;
 			}
-			$mysqli->close();
+			//$mysqli->close();
 		} catch (PDOException $e) {
 			die("Error occurred:" . $e->getMessage());
 		}
@@ -52,7 +52,7 @@
 		$sql = "UPDATE login SET profile_name = '" .$profile_name. "', username = '".$username."', password = '".$password."' WHERE login_id = 1";
 		$result = $mysqli->query($sql);
 		$ststus = true;
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_result['status'] = $status;
 		sleep(2);

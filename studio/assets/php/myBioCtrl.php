@@ -15,6 +15,6 @@ if(isset($_GET['id'])){
         $author_bio = $row['author_bio'];	
         $author_photo = $row['author_photo'];        
     }
-    $mysqli->close();
+    
 }
 ?>

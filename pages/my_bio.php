@@ -14,7 +14,11 @@ include 'studio/assets/php/myBioCtrl.php';
 			
 			<div class="row mb-5">
 				<div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
-					<img src="<?=$author_photo?>" alt="Image" class="img-fluid w-10 rounded-circle mb-3" style="width: 250px;">
+					<?php if($author_photo != ''){?>
+						<img src="<?=$author_photo?>" alt="Image" class="img-fluid w-10 rounded-circle mb-3" style="width: 250px;">
+					<?php }else{?>
+						<img src="images/no_images.png" alt="Image" class="img-fluid w-10 rounded-circle mb-3" style="width: 250px;">
+					<?php } ?>
 					<h2 class="heading text-primary"><?=$author_name?></h2>
 					<p><?=$author_bio?></p>
 				</div>

@@ -86,7 +86,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['data'] = $mainData;
     	echo json_encode($return_array);
@@ -117,7 +117,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['author_name'] = $author_name;
 		$return_array['author_bio'] = $author_bio;

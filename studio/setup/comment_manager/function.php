@@ -68,7 +68,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['data'] = $mainData;
     	echo json_encode($return_array);
@@ -101,7 +101,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['post_id'] = $post_id;		
 		$return_array['post_title'] = $post_title;		
@@ -158,7 +158,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['status'] = $status;
 		$return_array['data'] = $mainData;
@@ -191,7 +191,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['status'] = $status;
 		$return_array['data'] = $mainData;

@@ -67,7 +67,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['data'] = $mainData;
     	echo json_encode($return_array);
@@ -94,7 +94,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 			
 		$return_array['category_id'] = $category_id;
 		$return_array['category_name'] = $category_name;
@@ -146,7 +146,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['status'] = $status;
 		$return_array['data'] = $mainData;
@@ -179,7 +179,7 @@
 		} else {
 			$status = false;
 		}
-		$mysqli->close();
+		//$mysqli->close();
 
 		$return_array['status'] = $status;
 		$return_array['data'] = $mainData;

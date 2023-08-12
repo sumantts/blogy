@@ -143,7 +143,11 @@
           <!-- END sidebar-box -->
           <div class="sidebar-box">
             <div class="bio text-center">
+              <?php if($author_photo != ''){?>
               <img src="<?=$author_photo?>" alt="Image Placeholder" class="img-fluid mb-3">
+              <?php }else{?>
+              <img src="images/no_images.png" alt="Image Placeholder" class="img-fluid mb-3">
+              <?php } ?>
               <div class="bio-body">
                 <h2><?=$author_name?></h2>
                 <p class="mb-4"><?=substr($author_bio, 0, 300)?></p>

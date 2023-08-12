@@ -22,5 +22,5 @@ if ($result->num_rows > 0) {
         array_push($authors, $author);
     }
 }
-$mysqli->close();
+
 ?>
